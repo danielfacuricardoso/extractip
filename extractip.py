@@ -4,7 +4,7 @@ import subprocess
 import os
 import netifaces
 netifaces.interfaces()
-#netifaces.ifaddresses('eth0')
+#netifaces.ifaddresses('choose some interface like eth1-2 1 per')
 #for interface in netifaces.interfaces():
     #print netifaces.ifaddresses(interface)[netifaces.AF_INET]
 for interface in netifaces.interfaces():
