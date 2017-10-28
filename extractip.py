@@ -10,5 +10,5 @@ for interface in netifaces.interfaces():
      		       with open('test1','w') as f:
 #                       sys.stdout=f
                         print link['addr']
-   # problem:neet to write 4 lines but it just write last, its mean that it's overwrite all lines before last.
+   # problem:need to write 4 lines but it just write last, its mean that it's overwrite all lines before last.
 		
