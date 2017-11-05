@@ -3,6 +3,7 @@
 #2) testar ping via ssh
 #3) executar script melhor caminho
 #4) gravar em todas a interfaces
+#scp antonio@172.29.93.40:/home/antonio/desenvolvimento/clonadosTeste/extractip/unbTesteSdn/* /root/unbTesteSdn
 
 import paramiko
 ### 1 - IMPORTAR ARQUIVO COM A TOPOLOGIA
