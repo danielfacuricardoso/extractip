@@ -9,7 +9,7 @@ import re
 #CONECTANDO VIA SSH COM O CONTROLADOR
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('192.168.3.1', username='root', password='123')
+ssh.connect('192.168.1.24', username='root', password='123')
 canal = ssh.invoke_shell()
 
 listaComandosSSH = open("listaComandosSSH.txt",'r')

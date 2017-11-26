@@ -4,9 +4,9 @@ ping -c 1 192.168.0.14 -q
 ping -c 1 192.168.0.18 -q
 exit
 ssh 192.168.3.2,123
-ping -c 1 192.168.0.2 -q
-ping -c 1 192.168.0.14 -q
-ping -c 1 192.168.0.18 -q
+ssh 192.168.0.2,123
+ping -c 1 192.168.0.5 -q
+ping -c 1 192.168.1.2 -q
 exit
 #1)informar a lista de comandos aqui
 #2)informar comentado os comandos de necessários para gravar a ROTA_ESTATICA.
