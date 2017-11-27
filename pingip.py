@@ -21,3 +21,18 @@ def probe_ok(ip):
 TopologiaUpR1 = [ip for ip in Topologia_Roteador_R1_Padrao if probe_ok(ip)]
 #print "TOPOLOGIA R1:\n"
 print TopologiaUpR1
+#TOPOLOGIA R2
+stdin, stdout, stderr = ssh.exec_command('python /root/comand7R2.py')
+TOPOLOGIA_R2= stdout.read()
+#print "TOPOLOGIA_R2:\n"
+print TOPOLOGIA_R2
+stdin, stdout, stderr = ssh.exec_command('exit')
+print stdout
+#TOPOLOGIA R4
+stdin, stdout, stderr = ssh.exec_command('python /root/comand7R4.py')
+TOPOLOGIA_R4= stdout.read()
+#print "TOPOLOGIA R4:\n"
+print TOPOLOGIA_R4
+# TOPOLOGIAGERAL ##
+TOPOLOGIAGERAL =[TopologiaUpR1,TOPOLOGIA_R2,TOPOLOGIA_R4]
+print TOPOLOGIAGERAL
