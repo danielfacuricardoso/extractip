@@ -4,6 +4,7 @@
 #3) executar script melhor caminho
 #4) gravar em todas a interfaces
 #scp antonio@192.168.1.150:/home/antonio/desenvolvimento/clonadosTeste/extractip/unbTesteSdn/* /root/extractip/unbTesteSdn
+#scp * root@10.208.21.59:/root/extractip/unbTesteSdn
 
 
 import paramiko
