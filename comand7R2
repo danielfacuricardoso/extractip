@@ -1,0 +1,28 @@
+#!/bin/usr/env  python
+#!coding: utf-8
+import paramiko
+import os
+import subprocess
+import sys
+import re
+#Autenticação R2
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect('192.168.0.2')
+#Nescessário configurar uma quebra no ssh caso a interface de R1 PRA R2 ESTEJA DOWN realizar ssh por outro caminho
+#Fim da Autenticação R2
+#Iniciando criação da Topologia - Roteador 2
+Topologia_Roteador_R2_Padrao = ['192.168.0.2','192.168.0.5','192.168.1.2']
+def probe_ok(ip):
+    stdin, stdout, stderr = ssh.exec_command('ping -c 1 ' + ip + ' -q')
+    segmento= stdout.read()
+    if (len(segmento)==0):
+       segmento='100'
+    else:
+#    print segmento
+        Segmento_Teste_Interface_Remota=int(re.findall(r'(\d+)%',segmento)[0])
+#    print Segmento_Teste_Interface_Remota
+    return Segmento_Teste_Interface_Remota != 100
+#TOPOLOGIA R2
+TopologiaUpR2= [ip for ip in Topologia_Roteador_R2_Padrao if probe_ok(ip)]
+print TopologiaUpR2
