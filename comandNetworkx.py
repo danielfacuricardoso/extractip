@@ -66,4 +66,4 @@ for linha in listaTopologia:
 ### 3 - EXIBE MENOR CAMINHO
 print(nx.dijkstra_path(G, 'H1', 'H2', weight='weight')
 
-root@sdn-controladora:~/distribuido#
+
