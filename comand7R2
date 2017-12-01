@@ -12,7 +12,14 @@ ssh.connect('192.168.0.2')
 #Nescessário configurar uma quebra no ssh caso a interface de R1 PRA R2 ESTEJA DOWN realizar ssh por outro caminho
 #Fim da Autenticação R2
 #Iniciando criação da Topologia - Roteador 2
-Topologia_Roteador_R2_Padrao = ['192.168.0.2','192.168.0.5','192.168.1.2']
+
+#                                      ORIGEM_R2_R1    ORIGEM_R2_R4   ORIGEM_R2_HOSTR2 
+Topologia_Roteador_R2_Padrao_Origem = ['192.168.0.2','192.168.0.6','192.168.1.1']
+#                                       DESTINO_R1      DESTINO_R4   DESTINO_HOSTR2 
+Topologia_Roteador_R2_Padrao_Destino = ['192.168.0.1','192.168.0.5','192.168.1.2']
+#o que interessa:
+Topologia_Roteador_R2_Padrao_Networkx = [Topologia_Roteador_R2_Padrao_Origem[2]
+                                         
 def probe_ok(ip):
     stdin, stdout, stderr = ssh.exec_command('ping -c 1 ' + ip + ' -q')
     segmento= stdout.read()
@@ -24,5 +31,5 @@ def probe_ok(ip):
 #    print Segmento_Teste_Interface_Remota
     return Segmento_Teste_Interface_Remota != 100
 #TOPOLOGIA R2
-TopologiaUpR2= [ip for ip in Topologia_Roteador_R2_Padrao if probe_ok(ip)]
+TopologiaUpR2= [ip for ip in Topologia_Roteador_R2_Padrao_Destino if probe_ok(ip)]
 print TopologiaUpR2
